@@ -1,11 +1,12 @@
 FROM oryd/kratos:v1.3.1
 
-# Copy the Kratos config and identity schema
-COPY kratos.yml /app/kratos.yml
-COPY identity.schema.json /app/identity.schema.json
+# Copy configuration files
+COPY kratos.yml /etc/config/kratos.yml
+COPY identity.schema.json /etc/config/identity.schema.json
 
-# Set the working directory
-WORKDIR /app
+# Set working directory
+WORKDIR /etc/config
 
-# Start Kratos using the absolute path
-CMD ["/usr/bin/kratos", "serve", "--config", "/app/kratos.yml"]
+# Start Kratos correctly
+ENTRYPOINT ["kratos"]
+CMD ["serve", "--config", "/etc/config/kratos.yml"]
