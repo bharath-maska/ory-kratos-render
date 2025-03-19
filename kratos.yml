@@ -2,11 +2,29 @@ dsn: postgresql://kratos_db_1rtf_user:Sgfs275RPCV0suTWGFBUqYKFPD5V7nb3@dpg-cvdhk
 
 serve:
   public:
-    base_url: https://ory-kratos-frontend.onrender.com
+    base_url: https://ory-kratos-frontend.onrender.com #JAN 29
     cors:
       enabled: true
       allowed_origins:
+        - http://15.206.71.188:5174
+        - http://localhost:5174
+        - http://localhost:3000
         - https://ory-kratos-frontend.onrender.com
+      allowed_methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - OPTIONS
+      allowed_headers:
+        - Authorization
+        - Content-Type
+        - X-Csrf-Token
+        - X-CSRF-Token
+      exposed_headers:
+        - Set-Cookie
+      allow_credentials: true
+      max_age: 3600
 log:
   level: debug
 
