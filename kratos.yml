@@ -12,6 +12,24 @@ log:
 
 selfservice:
   default_browser_return_url: https://ory-kratos-frontend.onrender.com/
+  methods:
+    oidc:
+      enabled: true
+      config:
+        providers:
+          - id: github
+            provider: github
+            client_id: Ov23liQHDZEkx9F3ukuY  # Replace with actual client ID
+            client_secret: cab88143bcc2d1d3557ec9c446ca1ed6c3863ff1  # Replace with actual client secret
+            pkce: never  # Explicitly disable PKCE
+            # mapper_url: file:///app/oidc-mapper.json
+            scope:
+              - user:email
+              - read:user
+            issuer_url: https://github.com
+            token_url: https://github.com/login/oauth/access_token
+
+   
 
 identity:
   schemas:
