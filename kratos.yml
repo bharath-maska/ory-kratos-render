@@ -14,7 +14,7 @@ selfservice:
   default_browser_return_url: https://ory-kratos-frontend.onrender.com/
   allowed_return_urls:
     - https://ory-kratos-frontend.onrender.com/
-
+  methods:
     oidc:
       enabled: true
       config:
