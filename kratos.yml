@@ -29,7 +29,7 @@ serve:
       allow_credentials: true
       max_age: 3600
   admin:
-    base_url: http://15.206.71.188:4434
+    base_url: https://ory-kratos-render.onrender.com
 
 # dsn: "postgres://<USER>:<=PASSWORD>@<PRIVATE_IP>:5432/<DB_NAME>?sslmode=disable"
 dsn: postgresql://kratos_db_1rtf_user:Sgfs275RPCV0suTWGFBUqYKFPD5V7nb3@dpg-cvdhk3ofnakc73dhk2m0-a/kratos_db_1rtf
@@ -118,7 +118,7 @@ selfservice:
     oidc:
       enabled: true
       config:
-        base_redirect_uri: http://15.206.71.188:4433
+        base_redirect_uri: https://ory-kratos-render.onrender.com
         providers:
           - id: github
             provider: github
