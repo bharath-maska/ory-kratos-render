@@ -10,14 +10,6 @@ serve:
 log:
   level: debug
 
-serve:
-  public:
-    base_url: https://ory-kratos-frontend.onrender.com/
-    port: 4433
-  admin:
-    base_url: http://localhost:4434
-    port: 4434
-
 selfservice:
   default_browser_return_url: https://ory-kratos-frontend.onrender.com/
 
