@@ -1,0 +1,27 @@
+dsn: postgresql://kratos_db_1rtf_user:Sgfs275RPCV0suTWGFBUqYKFPD5V7nb3@dpg-cvdhk3ofnakc73dhk2m0-a/kratos_db_1rtf
+
+serve:
+  public:
+    base_url: https://ory-kratos-frontend.onrender.com
+    cors:
+      enabled: true
+      allowed_origins:
+        - https://ory-kratos-frontend.onrender.com
+log:
+  level: debug
+
+serve:
+  public:
+    base_url: https://ory-kratos-frontend.onrender.com/
+    port: 4433
+  admin:
+    base_url: http://localhost:4434
+    port: 4434
+
+selfservice:
+  default_browser_return_url: https://ory-kratos-frontend.onrender.com/
+
+identity:
+  schemas:
+    - id: default
+      url: file:///app/identity.schema.json
