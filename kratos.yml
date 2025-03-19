@@ -49,7 +49,7 @@ session:
 cookies:
   domain: ""
   same_site: "None"
-  secure: "false"
+  # secure: "false"
 
 security:
   csrf:
@@ -125,7 +125,7 @@ selfservice:
             client_id: Ov23liQHDZEkx9F3ukuY  # Replace with actual client ID
             client_secret: cab88143bcc2d1d3557ec9c446ca1ed6c3863ff1  # Replace with actual client secret
             pkce: never  # Explicitly disable PKCE
-            # mapper_url: file://./mappers/github_mapper.jsonnet
+            mapper_url: file://app/github_mapper.jsonnet
             scope:
               - user:email
               - read:user
