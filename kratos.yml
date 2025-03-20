@@ -70,8 +70,8 @@ security:
   csrf:
     enabled: true
   cookies:
-    same_site: "Lax"
-    secure: "true"  # Use true since render.com uses HTTPS
+    same_site: "None"
+    secure: true
 
 # Session cookie settings
 session:
