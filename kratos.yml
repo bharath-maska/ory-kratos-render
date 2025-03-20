@@ -40,23 +40,24 @@ identity:
     - id: default
       url: file:///app/identity.schema.json
 
+
 session:
   cookie:
     persistent: true
     path: /
-    same_site: "None"
+    same_site: "Lax"  # Changed from "None" to "Lax" for better security
+    domain: "render.com"  # Set to your common parent domain
 
 cookies:
-  domain: ""
-  same_site: "None"
-  # secure: "false"
+  domain: "render.com"  # Set to your common parent domain
+  same_site: "Lax"  # Changed from "None" to "Lax"
 
 security:
   csrf:
     enabled: true
   cookies:
-    same_site: "None"
-    secure: "false"
+    same_site: "Lax"  # Changed from "None" to "Lax"
+    secure: "true"  # Changed to "true" since render.com uses HTTPS
 
 
 selfservice:
