@@ -63,7 +63,7 @@ identity:
 cookies:
   domain: ".onrender.com"  # Note the leading dot to include all subdomains
   path: "/"
-  same_site: "Lax"  # Use Lax since both services are on render.com
+  same_site: "None"  # Use Lax since both services are on render.com
 
 # Security settings
 security:
@@ -78,7 +78,7 @@ session:
   cookie:
     persistent: true
     path: "/"
-    same_site: "Lax"
+    same_site: "None"
     domain: ".onrender.com"
 
 
