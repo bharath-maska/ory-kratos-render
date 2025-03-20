@@ -41,23 +41,46 @@ identity:
       url: file:///app/identity.schema.json
 
 
-session:
-  cookie:
-    persistent: true
-    path: /
-    same_site: "Lax"  # Changed from "None" to "Lax" for better security
-    domain: "onrender.com"  # Set to your common parent domain
+# session:
+#   cookie:
+#     persistent: true
+#     path: /
+#     same_site: "Lax"  # Changed from "None" to "Lax" for better security
+#     domain: "onrender.com"  # Set to your common parent domain
 
+# cookies:
+#   domain: "onrender.com"  # Set to your common parent domain
+#   same_site: "Lax"  # Changed from "None" to "Lax"
+
+# security:
+#   csrf:
+#     enabled: true
+#   cookies:
+#     same_site: "Lax"  # Changed from "None" to "Lax"
+#     secure: "true"  # Changed to "true" since render.com uses HTTPS
+
+# Cookie settings for all cookies
 cookies:
-  domain: "onrender.com"  # Set to your common parent domain
-  same_site: "Lax"  # Changed from "None" to "Lax"
+  domain: ".onrender.com"  # Note the leading dot to include all subdomains
+  path: "/"
+  same_site: "Lax"  # Use Lax since both services are on render.com
 
+# Security settings
 security:
   csrf:
     enabled: true
   cookies:
-    same_site: "Lax"  # Changed from "None" to "Lax"
-    secure: "true"  # Changed to "true" since render.com uses HTTPS
+    same_site: "Lax"
+    secure: "true"  # Use true since render.com uses HTTPS
+
+# Session cookie settings
+session:
+  cookie:
+    persistent: true
+    path: "/"
+    same_site: "Lax"
+    domain: ".onrender.com"
+
 
 
 selfservice:
