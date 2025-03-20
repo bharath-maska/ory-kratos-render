@@ -46,10 +46,10 @@ session:
     persistent: true
     path: /
     same_site: "Lax"  # Changed from "None" to "Lax" for better security
-    domain: "render.com"  # Set to your common parent domain
+    domain: "onrender.com"  # Set to your common parent domain
 
 cookies:
-  domain: "render.com"  # Set to your common parent domain
+  domain: "onrender.com"  # Set to your common parent domain
   same_site: "Lax"  # Changed from "None" to "Lax"
 
 security:
