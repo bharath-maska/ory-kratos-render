@@ -122,8 +122,8 @@ selfservice:
         providers:
           - id: github
             provider: github
-            client_id: Ov23liQHDZEkx9F3ukuY  # Replace with actual client ID
-            client_secret: cab88143bcc2d1d3557ec9c446ca1ed6c3863ff1  # Replace with actual client secret
+            client_id: Ov23liJr1SEw4gzMMbUH  # Replace with actual client ID
+            client_secret: df75092fb9dbbc739caf1a0a790119bab0efe77f  # Replace with actual client secret
             pkce: never  # Explicitly disable PKCE
             mapper_url: file://app/github_mapper.jsonnet
             scope:
