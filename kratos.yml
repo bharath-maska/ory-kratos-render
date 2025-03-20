@@ -105,6 +105,7 @@ selfservice:
             - hook: show_verification_ui
             - hook: session
         oidc:
+          default_browser_return_url: https://ory-kratos-frontend.onrender.com
           hooks:
             - hook: session
     settings:
