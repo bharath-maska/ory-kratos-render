@@ -5,14 +5,14 @@ log:
 
 serve:
   public:
-    base_url: https://ory-kratos-frontend.onrender.com #JAN 29
+    base_url: http://52.66.25.93:3000
     cors:
       enabled: true
       allowed_origins:
         - http://15.206.71.188:5174
         - http://localhost:5174
         - http://localhost:3000
-        - https://ory-kratos-frontend.onrender.com
+        - http://52.66.25.93:3000
       allowed_methods:
         - GET
         - POST
@@ -29,9 +29,8 @@ serve:
       allow_credentials: true
       max_age: 3600
   admin:
-    base_url: https://ory-kratos-render.onrender.com
+    base_url: http://15.206.71.188:4434
 
-# dsn: "postgres://<USER>:<=PASSWORD>@<PRIVATE_IP>:5432/<DB_NAME>?sslmode=disable"
 dsn: postgresql://kratos_db_1rtf_user:Sgfs275RPCV0suTWGFBUqYKFPD5V7nb3@dpg-cvdhk3ofnakc73dhk2m0-a/kratos_db_1rtf
 
 identity:
@@ -40,37 +39,18 @@ identity:
     - id: default
       url: file:///app/identity.schema.json
 
-
-# session:
-#   cookie:
-#     persistent: true
-#     path: /
-#     same_site: "Lax"  # Changed from "None" to "Lax" for better security
-#     domain: "onrender.com"  # Set to your common parent domain
-
-# cookies:
-#   domain: "onrender.com"  # Set to your common parent domain
-#   same_site: "Lax"  # Changed from "None" to "Lax"
-
-# security:
-#   csrf:
-#     enabled: true
-#   cookies:
-#     same_site: "Lax"  # Changed from "None" to "Lax"
-#     secure: "true"  # Changed to "true" since render.com uses HTTPS
-
 # Cookie settings for all cookies
 cookies:
   domain: ".onrender.com"  # Note the leading dot to include all subdomains
   path: "/"
-  same_site: "None"  # Use Lax since both services are on render.com
+  same_site: "Lax"  # Use Lax since both services are on render.com
 
 # Security settings
 security:
   csrf:
     enabled: true
   cookies:
-    same_site: "None"
+    same_site: "Lax"  # Use Lax since both services are on render.com
     secure: true
 
 # Session cookie settings
@@ -78,18 +58,16 @@ session:
   cookie:
     persistent: true
     path: "/"
-    same_site: "None"
+    same_site: "Lax"  # Use Lax since both services are on render.com
     domain: ".onrender.com"
 
-
-
 selfservice:
-  default_browser_return_url: https://ory-kratos-frontend.onrender.com/
+  default_browser_return_url: http://52.66.25.93:3000/
   allowed_return_urls:
-    - https://ory-kratos-frontend.onrender.com/
+    - http://52.66.25.93:3000/
   flows:
     login:
-      ui_url: https://ory-kratos-frontend.onrender.com/login
+      ui_url: http://52.66.25.93:3000/login
       after:
         password:
           hooks:
@@ -98,23 +76,23 @@ selfservice:
           hooks:
             - hook: revoke_active_sessions
     registration:
-      ui_url: https://ory-kratos-frontend.onrender.com/registration
+      ui_url: http://52.66.25.93:3000/registration
       after:
         password:
           hooks:
             - hook: show_verification_ui
             - hook: session
         oidc:
-          default_browser_return_url: https://ory-kratos-frontend.onrender.com
+          default_browser_return_url: http://52.66.25.93:3000
           hooks:
             - hook: session
     settings:
-      ui_url: https://ory-kratos-frontend.onrender.com/settings
+      ui_url: http://52.66.25.93:3000/settings
       privileged_session_max_age: 1h
     verification:
-      ui_url: https://ory-kratos-frontend.onrender.com/verification
+      ui_url: http://52.66.25.93:3000/verification
     recovery:
-      ui_url: https://ory-kratos-frontend.onrender.com/recovery
+      ui_url: http://52.66.25.93:3000/recovery
 
   methods:
     password:
@@ -129,21 +107,21 @@ selfservice:
           id: .com
           # Set 'origin' to the exact URL of the page that prompts the user to use WebAuthn. You must include the scheme, host, and port.
           origins:
-            - https://ory-kratos-frontend.onrender.com/login
+            - http://52.66.25.93:3000/login
     passkey:
       enabled: true
       config:
         rp:
           display_name: Suven Kratos
           # Set 'id' to the top-level domain.
-          id: onrender.com
+          id: .com
           # Set 'origin' to the exact URL of the page that prompts the user to use WebAuthn. You must include the scheme, host, and port.
           origins:
-            - https://ory-kratos-frontend.onrender.com/login
+            - http://52.66.25.93:3000/login
     oidc:
       enabled: true
       config:
-        base_redirect_uri: https://ory-kratos-render.onrender.com
+        base_redirect_uri: http://15.206.71.188:4433
         providers:
           - id: github
             provider: github
@@ -156,7 +134,6 @@ selfservice:
               - read:user
             issuer_url: https://github.com
             token_url: https://github.com/login/oauth/access_token
-
 
 courier:
   smtp:
