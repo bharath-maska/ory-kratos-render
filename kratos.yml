@@ -129,7 +129,8 @@ selfservice:
             client_id: Ov23liJr1SEw4gzMMbUH  # Replace with actual client ID
             client_secret: df75092fb9dbbc739caf1a0a790119bab0efe77f  # Replace with actual client secret
             pkce: never  # Explicitly disable PKCE
-            mapper_url: file://app/github_mapper.jsonnet
+            # mapper_url: file://app/github_mapper.jsonnet
+            mapper_url: file://./mappers/github_mapper.jsonnet
             scope:
               - user:email
               - read:user
