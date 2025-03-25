@@ -5,14 +5,14 @@ log:
 
 serve:
   public:
-    base_url: http://52.66.25.93:3000
+    base_url: http://13.126.144.184:3000
     cors:
       enabled: true
       allowed_origins:
         - http://15.206.71.188:5174
         - http://localhost:5174
         - http://localhost:3000
-        - http://52.66.25.93:3000
+        - http://13.126.144.184:3000
       allowed_methods:
         - GET
         - POST
@@ -62,12 +62,12 @@ session:
     domain: ".onrender.com"
 
 selfservice:
-  default_browser_return_url: http://52.66.25.93:3000/
+  default_browser_return_url: http://13.126.144.184:3000/
   allowed_return_urls:
-    - http://52.66.25.93:3000/
+    - http://13.126.144.184:3000/
   flows:
     login:
-      ui_url: http://52.66.25.93:3000/login
+      ui_url: http://13.126.144.184:3000/login
       after:
         password:
           hooks:
@@ -76,14 +76,14 @@ selfservice:
           hooks:
             - hook: revoke_active_sessions
     registration:
-      ui_url: http://52.66.25.93:3000/registration
+      ui_url: http://13.126.144.184:3000/registration
       after:
         password:
           hooks:
             - hook: show_verification_ui
             - hook: session
         oidc:
-          default_browser_return_url: http://52.66.25.93:3000
+          default_browser_return_url: http://13.126.144.184:3000
           hooks:
             - hook: session
     settings:
@@ -107,7 +107,7 @@ selfservice:
           id: .com
           # Set 'origin' to the exact URL of the page that prompts the user to use WebAuthn. You must include the scheme, host, and port.
           origins:
-            - http://52.66.25.93:3000/login
+            - http://13.126.144.184:3000/login
     passkey:
       enabled: true
       config:
@@ -117,7 +117,7 @@ selfservice:
           id: .com
           # Set 'origin' to the exact URL of the page that prompts the user to use WebAuthn. You must include the scheme, host, and port.
           origins:
-            - http://52.66.25.93:3000/login
+            - http://13.126.144.184:3000/login
     oidc:
       enabled: true
       config:
