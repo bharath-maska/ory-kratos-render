@@ -37,7 +37,8 @@ identity:
   default_schema_id: default
   schemas:
     - id: default
-      url: file:///app/identity.schema.json
+      # url: file:///app/identity.schema.json
+      url: file:///home/ec2-user/kratos/config/identity.schema.json
 
 # Cookie settings for all cookies
 cookies:
